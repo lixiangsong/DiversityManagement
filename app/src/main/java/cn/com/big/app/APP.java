@@ -1,4 +1,4 @@
-package big.com.cn.myapplication.app;
+package cn.com.big.app;
 
 import android.app.Application;
 
