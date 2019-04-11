@@ -56,7 +56,7 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    protected void initial() {
+    protected void initView() {
         mViewPager = findViewById(R.id.view_pager);
         magicIndicator = findViewById(R.id.magic_indicator);
         magicIndicator.setBackgroundColor(Color.WHITE);

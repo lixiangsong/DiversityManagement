@@ -37,7 +37,7 @@ public class WebViewActivity extends BaseActivity {
 
     @SuppressLint("SetJavaScriptEnabled")
     @Override
-    protected void initial() {
+    protected void initView() {
         mWebView = findViewById(R.id.webView);
         // 获取传递过来的值
         String url = getIntent().getStringExtra("url");

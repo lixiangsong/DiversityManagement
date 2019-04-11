@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 
+import butterknife.ButterKnife;
+
 
 /**
  * Activity的基类.
@@ -25,8 +27,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         mActivity = this;
         // 设置布局
         setContentView(initLayout());
+        ButterKnife.bind(this);
         // 设置初始化视图和数据
-        initial();
+        initView();
     }
 
     @Override
@@ -50,11 +53,10 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @return
      */
     protected abstract int initLayout();
-
     /**
      * 初始化操作(视图或数据)
      */
-    protected abstract void initial();
+    protected abstract void initView();
 
     /**
      * 不带参数的跳转
