@@ -2,8 +2,6 @@ package cn.com.big;
 
 import android.annotation.SuppressLint;
 import android.graphics.PixelFormat;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.WindowManager;
 
@@ -17,6 +15,8 @@ import com.tencent.smtt.sdk.WebSettings;
 import com.tencent.smtt.sdk.WebView;
 import com.tencent.smtt.sdk.WebViewClient;
 
+import cn.com.big.base.BaseActivity;
+
 /**
  * X5内核加载网页.
  *
@@ -24,18 +24,20 @@ import com.tencent.smtt.sdk.WebViewClient;
  * @version 1.0
  * @date 2019/04/09
  */
-@SuppressLint("SetJavaScriptEnabled")
-public class WebViewActivity extends AppCompatActivity {
+public class WebViewActivity extends BaseActivity {
 
     private WebView mWebView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected int initLayout() {
         getWindow().setFormat(PixelFormat.TRANSLUCENT);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED, WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
-        setContentView(R.layout.activity_web_view);
+        return R.layout.activity_web_view;
+    }
 
+    @SuppressLint("SetJavaScriptEnabled")
+    @Override
+    protected void initial() {
         mWebView = findViewById(R.id.webView);
         // 获取传递过来的值
         String url = getIntent().getStringExtra("url");
