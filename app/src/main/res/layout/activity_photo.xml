@@ -8,6 +8,13 @@
 
     <include layout="@layout/title_common_layout" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="bottom"
+        android:text="里面有多个图片拿回的路径，这里只拿第一个图片显示" />
+
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
@@ -15,15 +22,14 @@
         android:background="@color/color_69"
         android:text="选择图片" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="bottom"
-        android:text="里面有多个图片拿回的路径，这里只拿第一个图片显示" />
-
-    <ImageView
-        android:id="@+id/iamgeview"
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iamgeview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </android.support.v4.widget.NestedScrollView>
 
 </LinearLayout>

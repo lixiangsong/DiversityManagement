@@ -43,9 +43,9 @@ public class MainActivity extends BaseActivity {
     private ViewPager mViewPager;
     private MagicIndicator magicIndicator;
     // 选中了的图片
-    private final static int[] CHECK_BG = new int[]{R.mipmap.ic_launcher, R.mipmap.ic_launcher};
+    private final static int[] CHECK_BG = new int[]{R.mipmap.home_ic_ck, R.mipmap.user_ic_ck};
     // 未选中了图片
-    private final static int[] UNCHECK_BG = new int[]{R.mipmap.ic_launcher, R.mipmap.ic_launcher};
+    private final static int[] UNCHECK_BG = new int[]{R.mipmap.home_ic, R.mipmap.user_ic};
     // 底部栏上的文字
     private final static String[] BOTTOM_TITLES = new String[]{"首页", "我的"};
     private List<String> mTitleList = Arrays.asList(BOTTOM_TITLES);
