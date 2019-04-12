@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import cn.com.big.R;
 import cn.com.big.base.BaseFragment;
 import cn.com.big.home.photo.PhotoActivity;
+import cn.com.big.mvp.MvpMainActivity;
 
 /**
  * 首页.
@@ -36,6 +37,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         } else {
             mRootView = inflater.inflate(R.layout.fragment_home, container, false);
             mRootView.findViewById(R.id.photo_ll).setOnClickListener(this);
+            mRootView.findViewById(R.id.mvp_tv).setOnClickListener(this);
             initView();
         }
         return mRootView;
@@ -51,6 +53,10 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             case R.id.photo_ll:
                 Intent intent = new Intent(getActivity(), PhotoActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.mvp_tv:
+                Intent intent2 = new Intent(getActivity(), MvpMainActivity.class);
+                startActivity(intent2);
                 break;
         }
     }

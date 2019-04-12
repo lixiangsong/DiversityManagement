@@ -41,7 +41,8 @@
             android:label="dexopt"
             android:process=":dexopt" />
 
-        <activity android:name=".home.photo.PhotoActivity"></activity>
+        <activity android:name=".home.photo.PhotoActivity" />
+        <activity android:name=".mvp.MvpMainActivity"></activity>
     </application>
 
 </manifest>
