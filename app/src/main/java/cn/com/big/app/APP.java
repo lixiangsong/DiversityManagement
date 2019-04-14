@@ -30,7 +30,7 @@ public class APP extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
+        instance = this;
         initX5WebView();
     }
 
