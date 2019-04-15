@@ -1,20 +1,23 @@
 package cn.com.big.mvp;
 
-import android.util.Log;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.util.List;
-
 import butterknife.BindView;
+import butterknife.OnClick;
 import cn.com.big.R;
 import cn.com.big.base.BaseActivity;
-import cn.com.big.mvp.presenter.IPresenterImpl;
 
-public class MvpMainActivity extends BaseActivity implements IView {
-    @BindView(R.id.text_tv)
-    TextView textTv;
+public class MvpMainActivity extends BaseActivity {
 
-    private IPresenter presenter;
+
+    @BindView(R.id.back)
+    LinearLayout back;
+    @BindView(R.id.title_name)
+    TextView titleName;
+    @BindView(R.id.contentFrame)
+    FrameLayout contentFrame;
 
     @Override
     protected int initLayout() {
@@ -23,12 +26,12 @@ public class MvpMainActivity extends BaseActivity implements IView {
 
     @Override
     protected void initView() {
-        presenter = new IPresenterImpl(this);
-        presenter.loadData();
+        titleName.setText("MVP模式");
     }
 
-    @Override
-    public void upViewData(List<String> data) {
-        textTv.setText("dsdsds" + data.get(0));
+
+    @OnClick(R.id.back)
+    public void onViewClicked() {
+        finish();
     }
 }
